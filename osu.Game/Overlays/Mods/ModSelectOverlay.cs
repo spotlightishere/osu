@@ -217,6 +217,11 @@ namespace osu.Game.Overlays.Mods
                                                 LayoutEasing = Easing.OutQuint,
                                                 Children = new[]
                                                 {
+                                                    CreateModSection(ModType.Automation).With(s =>
+                                                    {
+                                                        s.ToggleKeys = new[] { Key.Z, Key.X, Key.C, Key.V, Key.B, Key.N, Key.M };
+                                                        s.Action = modButtonPressed;
+                                                    }),
                                                     CreateModSection(ModType.DifficultyReduction).With(s =>
                                                     {
                                                         s.ToggleKeys = new[] { Key.Q, Key.W, Key.E, Key.R, Key.T, Key.Y, Key.U, Key.I, Key.O, Key.P };
@@ -225,11 +230,6 @@ namespace osu.Game.Overlays.Mods
                                                     CreateModSection(ModType.DifficultyIncrease).With(s =>
                                                     {
                                                         s.ToggleKeys = new[] { Key.A, Key.S, Key.D, Key.F, Key.G, Key.H, Key.J, Key.K, Key.L };
-                                                        s.Action = modButtonPressed;
-                                                    }),
-                                                    CreateModSection(ModType.Automation).With(s =>
-                                                    {
-                                                        s.ToggleKeys = new[] { Key.Z, Key.X, Key.C, Key.V, Key.B, Key.N, Key.M };
                                                         s.Action = modButtonPressed;
                                                     }),
                                                     CreateModSection(ModType.Conversion).With(s =>
